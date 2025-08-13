@@ -1,0 +1,54 @@
+/* Estilos específicos para mi cuenta */
+.user-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.loan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: #fff;
+}
+
+.loan-item.overdue {
+    border-color: #e74c3c;
+    background: #fdf1f0;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.history-table th,
+.history-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.history-table th {
+    background: #f8f9fa;
+    color: #8b4513;
+}
+
+.status-ok {
+    color: #27ae60;
+}
+
+.status-warning {
+    color: #f39c12;
+}
+
+.status-error {
+    color: #e74c3c;
+}

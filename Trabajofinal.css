@@ -1,0 +1,605 @@
+ /* ====================================
+   BIBLIOTECA MUNICIPAL CENTRAL - CSS
+   ====================================*/
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.7;
+    color: #2c3e50;
+    background-color: #fefefe;
+}
+
+/* ====================================
+   HEADER SECTION
+   ====================================*/
+
+.header {
+    background: linear-gradient(135deg, #8b4513 0%, #d2691e 50%, #cd853f 100%);
+    color: #fff;
+    padding: 1.2rem 0;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 2.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+}
+
+.header-info {
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+/* ====================================
+   NAVIGATION SECTION
+   ====================================*/
+
+.navbar {
+    background-color: #1a252f;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 1.1rem 1.8rem;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #34495e;
+    color: #f39c12;
+}
+
+/* ====================================
+   LAYOUT AND CONTAINERS
+   ====================================*/
+
+.container {
+    max-width: 1300px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 250px;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    height: fit-content;
+    border: 1px solid #e8e8e8;
+}
+
+.main-content {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e8e8e8;
+}
+
+/* ====================================
+   SIDEBAR STYLES
+   ====================================*/
+
+.sidebar h3 {
+    color: #8b4513;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    border-bottom: 3px solid #d2691e;
+    padding-bottom: 0.7rem;
+    font-family: 'Georgia', serif;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.sidebar a {
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar a:hover {
+    color: #8b4513;
+    background-color: #f8f9fa;
+    padding-left: 1rem;
+}
+
+/* ====================================
+   PAGE CONTENT STYLES
+   ====================================*/
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.main-content h1 {
+    color: #8b4513;
+    margin-bottom: 1.8rem;
+    font-size: 2.4rem;
+    border-bottom: 4px solid #d2691e;
+    padding-bottom: 0.8rem;
+    font-family: 'Georgia', serif;
+}
+
+.main-content h2 {
+    color: #2c3e50;
+    margin-top: 2.5rem;
+    margin-bottom: 1.3rem;
+    font-size: 1.7rem;
+    font-family: 'Georgia', serif;
+}
+
+.main-content p {
+    margin-bottom: 1.3rem;
+    color: #4a4a4a;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* ====================================
+   SERVICE CARDS
+   ====================================*/
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+    border-left: 5px solid #d2691e;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.service-card h3 {
+    color: #8b4513;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ====================================
+   TABLES
+   ====================================*/
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.hours-table th,
+.hours-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.hours-table th {
+    background-color: #8b4513;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.hours-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.hours-table tr:hover {
+    background-color: #fff3cd;
+}
+
+/* ====================================
+   SEARCH AND FORMS
+   ====================================*/
+
+.search-form {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.search-form input[type="text"] {
+    width: 70%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-form button {
+    padding: 0.8rem 1.5rem;
+    background: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background: #a0522d;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* ====================================
+   BOOK GRID AND CARDS
+   ====================================*/
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.book-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e8e8e8;
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.book-card h4 {
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.book-card .author {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.book-card .status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.available {
+    background: #d4edda;
+    color: #155724;
+}
+
+.unavailable {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* ====================================
+   BUTTONS
+   ====================================*/
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    background: #8b4513;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.btn:hover {
+    background: #a0522d;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* ====================================
+   ALERTS AND NOTIFICATIONS
+   ====================================*/
+
+.alert {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.alert-success {
+    background: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+/* ====================================
+   FOOTER SECTION
+   ====================================*/
+
+.footer {
+    background: #1a252f;
+    color: #ecf0f1;
+    padding: 2.5rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.3rem;
+    color: #f39c12;
+    font-size: 1.3rem;
+    font-family: 'Georgia', serif;
+}
+
+.footer-section p,
+.footer-section li {
+    color: #bdc3c7;
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-section a:hover {
+    color: #f39c12;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #34495e;
+    color: #95a5a6;
+}
+
+/* ====================================
+   UTILITY CLASSES
+   ====================================*/
+
+.hidden {
+    display: none;
+}
+
+.search-results {
+    margin-top: 2rem;
+}
+
+.user-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #8b4513;
+}
+
+.loan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+}
+
+.loan-item.overdue {
+    border-left: 4px solid #dc3545;
+    background: #fff5f5;
+}
+
+.event-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 4px solid #28a745;
+}
+
+.event-date {
+    background: #8b4513;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* ====================================
+   RESPONSIVE DESIGN
+   ====================================*/
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .search-form input[type="text"] {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .search-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+}

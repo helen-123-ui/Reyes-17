@@ -1,0 +1,35 @@
+/* Estilos específicos para actividades */
+.event-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.event-date {
+    background: #8b4513;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    font-size: 0.9rem;
+}
+
+.event-card h3 {
+    margin-top: 0.5rem;
+    color: #2c3e50;
+}
+
+.event-card ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.event-card ul li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}

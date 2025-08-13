@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Municipal Central - Conocimiento para Todos</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/catalogo.css">
+    <link rel="stylesheet" href="styles/servicios.css">
+    <link rel="stylesheet" href="styles/actividades.css">
+    <link rel="stylesheet" href="styles/cuenta.css">
+    <link rel="stylesheet" href="styles/contacto.css">
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #fefefe;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #8b4513 0%, #d2691e 50%, #cd853f 100%);
+            color: #fff;
+            padding: 1.2rem 0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 2.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+
+        .header-info {
+            text-align: right;
+            font-size: 0.95rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #1a252f;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1.1rem 1.8rem;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: #34495e;
+            color: #f39c12;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr 250px;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            height: fit-content;
+            border: 1px solid #e8e8e8;
+        }
+
+        .main-content {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e8e8e8;
+        }
+
+        .sidebar h3 {
+            color: #8b4513;
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            border-bottom: 3px solid #d2691e;
+            padding-bottom: 0.7rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+        }
+
+        .sidebar a {
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sidebar a:hover {
+            color: #8b4513;
+            background-color: #f8f9fa;
+            padding-left: 1rem;
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .main-content h1 {
+            color: #8b4513;
+            margin-bottom: 1.8rem;
+            font-size: 2.4rem;
+            border-bottom: 4px solid #d2691e;
+            padding-bottom: 0.8rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .main-content h2 {
+            color: #2c3e50;
+            margin-top: 2.5rem;
+            margin-bottom: 1.3rem;
+            font-size: 1.7rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .main-content p {
+            margin-bottom: 1.3rem;
+            color: #4a4a4a;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Catálogo Styles */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .book-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .book-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Actividades Styles */
+        .event-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .event-date {
+            background: #8b4513;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mi Cuenta Styles */
+        .user-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .loan-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: #fff;
+        }
+
+        .loan-item.overdue {
+            border-color: #e74c3c;
+            background: #fdf1f0;
+        }
+
+        .btn {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #d2691e;
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .alert {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .alert-info {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            border-left: 5px solid #d2691e;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Hours Table */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .hours-table th,
+        .hours-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .hours-table th {
+            background-color: #8b4513;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .hours-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .hours-table tr:hover {
+            background-color: #fff3cd;
+        }
+
+        /* Search Form */
+        .search-form {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .search-form input[type="text"] {
+            width: 70%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-form button {
+            padding: 0.8rem 1.5rem;
+            background: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-form button:hover {
+            background: #a0522d;
+        }
+
+        /* Book Grid */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e8e8e8;
+        }
+
+        .book-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .book-card h4 {
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .book-card .author {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-card .status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .available {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .unavailable {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: #ecf0f1;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.3rem;
+            color: #f39c12;
+            font-size: 1.3rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .footer-section p, .footer-section li {
+            color: #bdc3c7;
+            margin-bottom: 0.7rem;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .footer-section a:hover {
+            color: #f39c12;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            background: #8b4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        .btn:hover {
+            background: #a0522d;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .search-form input[type="text"] {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .search-form button {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .search-results {
+            margin-top: 2rem;
+        }
+
+        .user-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #8b4513;
+        }
+
+        .loan-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #e8e8e8;
+        }
+
+        .loan-item.overdue {
+            border-left: 4px solid #dc3545;
+            background: #fff5f5;
+        }
+
+        .event-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #28a745;
+        }
+
+        .event-date {
+            background: #8b4513;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <span class="logo-icon">📚</span>
+                <a href="#" class="logo" onclick="showPage('inicio')">Biblioteca Municipal Central</a>
+            </div>
+            <div class="header-info">
+                <div>Horario: Lunes a Viernes 8:00 - 20:00</div>
+                <div>Teléfono: (01) 234-5678</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active" onclick="showPage('inicio')">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('catalogo')">Catálogo</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('servicios')">Servicios</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('actividades')">Actividades</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('cuenta')">Mi Cuenta</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('contacto')">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <h3>Recursos Disponibles</h3>
+                <ul>
+                    <li><a href="#" onclick="searchCategory('libros-fisicos')">📖 Libros Físicos (12,548)</a></li>
+                    <li><a href="#" onclick="searchCategory('libros-digitales')">💻 Libros Digitales (3,247)</a></li>
+                    <li><a href="#" onclick="searchCategory('revistas')">📰 Revistas y Periódicos (156)</a></li>
+                    <li><a href="#" onclick="searchCategory('multimedia')">🎬 Multimedia (892)</a></li>
+                    <li><a href="#" onclick="searchCategory('bases-datos')">📊 Bases de Datos (24)</a></li>
+                    <li><a href="#" onclick="searchCategory('musica')">🎵 Música y Audio (1,203)</a></li>
+                </ul>
+
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="#" onclick="showServiceInfo('prestamo')">Préstamo de Libros</a></li>
+                    <li><a href="#" onclick="showServiceInfo('sala')">Sala de Lectura</a></li>
+                    <li><a href="#" onclick="showServiceInfo('internet')">Internet y WiFi</a></li>
+                    <li><a href="#" onclick="showServiceInfo('impresion')">Impresión y Copias</a></li>
+                    <li><a href="#" onclick="showServiceInfo('asesoria')">Asesorías</a></li>
+                    <li><a href="#" onclick="showServiceInfo('talleres')">Talleres</a></li>
+                </ul>
+
+                <div class="alert" id="sidebar-alert">
+                    <strong>Aviso:</strong> Recuerda renovar tus préstamos antes del vencimiento para evitar multas.
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Página de Inicio -->
+                <div id="inicio" class="page active">
+                    <h1>Bienvenido a la Biblioteca Municipal Central</h1>
+                    
+                    <div class="search-form">
+                        <h3 style="margin-bottom: 1rem; color: #8b4513;">Buscar en el Catálogo</h3>
+                        <form onsubmit="performSearch(event)">
+                            <input type="text" placeholder="Título, autor, tema..." name="busqueda" id="search-input">
+                            <button type="submit">🔍 Buscar</button>
+                        </form>
+                        <div id="search-results" class="search-results hidden"></div>
+                    </div>
+
+                    <p>Nuestra biblioteca es un espacio dedicado al conocimiento, la cultura y el aprendizaje continuo. Con más de 50,000 volúmenes, recursos digitales y servicios especializados, estamos aquí para apoyar a estudiantes, investigadores y toda la comunidad en su búsqueda del saber.</p>
+
+                    <h2>Nuestros Servicios Principales</h2>
+                    
+                    <div class="services-grid">
+                        <div class="service-card" onclick="showServiceDetail('prestamo')">
+                            <h3>📚 Préstamo de Libros</h3>
+                            <p>Acceso a nuestra extensa colección con préstamos de hasta 15 días. Renovaciones disponibles en línea o presencialmente.</p>
+                        </div>
+                        
+                        <div class="service-card" onclick="showServiceDetail('digital')">
+                            <h3>💻 Recursos Digitales</h3>
+                            <p>Bases de datos académicas, e-books, revistas digitales y acceso a plataformas de investigación especializadas.</p>
+                        </div>
+                        
+                        <div class="service-card" onclick="showServiceDetail('academico')">
+                            <h3>🎓 Apoyo Académico</h3>
+                            <p>Asesorías para investigación, talleres de metodología y espacios de estudio individual y grupal.</p>
+                        </div>
+                        
+                        <div class="service-card" onclick="showServiceDetail('internet')">
+                            <h3>🌐 Acceso a Internet</h3>
+                            <p>WiFi gratuito, computadoras públicas y servicios de impresión y escaneo para todos los usuarios.</p>
+                        </div>
+                    </div>
+
+                    <h2>Horarios de Atención</h2>
+                    <table class="hours-table">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Horario</th>
+                                <th>Servicios Especiales</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr onclick="showDayInfo('weekday')">
+                                <td>Lunes - Viernes</td>
+                                <td>8:00 AM - 8:00 PM</td>
+                                <td>Todos los servicios</td>
+                            </tr>
+                            <tr onclick="showDayInfo('saturday')">
+                                <td>Sábados</td>
+                                <td>9:00 AM - 5:00 PM</td>
+                                <td>Préstamos y lectura</td>
+                            </tr>
+                            <tr onclick="showDayInfo('sunday')">
+                                <td>Domingos</td>
+                                <td>10:00 AM - 4:00 PM</td>
+                                <td>Solo sala de lectura</td>
+                            </tr>
+                            <tr onclick="showDayInfo('holiday')">
+                                <td>Feriados</td>
+                                <td>Cerrado</td>
+                                <td>Recursos digitales disponibles</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button class="btn" onclick="showPage('catalogo')">Ver Catálogo Completo</button>
+                    <button class="btn btn-secondary" onclick="showPage('cuenta')">Solicitar Carnet</button>
+                </div>
+
+                <!-- Página de Catálogo -->
+                <div id="catalogo" class="page">
+                    <h1>Catálogo de la Biblioteca</h1>
+                    
+                    <div class="search-form">
+                        <h3 style="margin-bottom: 1rem; color: #8b4513;">Búsqueda Avanzada</h3>
+                        <form onsubmit="advancedSearch(event)">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <input type="text" placeholder="Título" name="titulo">
+                                <input type="text" placeholder="Autor" name="autor">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <select name="categoria">
+                                    <option value="">Todas las categorías</option>
+                                    <option value="novela">Novela</option>
+                                    <option value="historia">Historia</option>
+                                    <option value="ciencia">Ciencia</option>
+                                    <option value="arte">Arte</option>
+                                    <option value="tecnologia">Tecnología</option>
+                                </select>
+                                <select name="disponibilidad">
+                                    <option value="">Cualquiera</option>
+                                    <option value="disponible">Disponible</option>
+                                    <option value="prestado">Prestado</option>
+                                </select>
+                            </div>
+                            <button type="submit">🔍 Buscar Avanzado</button>
+                        </form>
+                    </div>
+
+                    <h2>Libros Destacados</h2>
+                    <div class="book-grid" id="book-results">
+                        <div class="book-card">
+                            <h4>Cien Años de Soledad</h4>
+                            <div class="author">Gabriel García Márquez</div>
+                            <p>Una obra maestra del realismo mágico que narra la historia de la familia Buendía.</p>
+                            <span class="status available">Disponible</span>
+                            <button class="btn" style="margin-top: 1rem;" onclick="reserveBook('001')">Reservar</button>
+                        </div>
+                        
+                        <div class="book-card">
+                            <h4>Breve Historia del Tiempo</h4>
+                            <div class="author">Stephen Hawking</div>
+                            <p>Una introducción accesible a los conceptos fundamentales de la cosmología moderna.</p>
+                            <span class="status unavailable">Prestado</span>
+                            <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="addToWaitlist('002')">Lista de Espera</button>
+                        </div>
+                        
+                        <div class="book-card">
+                            <h4>El Arte de la Guerra</h4>
+                            <div class="author">Sun Tzu</div>
+                            <p>Tratado militar clásico sobre estrategia y táctica aplicable a múltiples campos.</p>
+                            <span class="status available">Disponible</span>
+                            <button class="btn" style="margin-top: 1rem;" onclick="reserveBook('003')">Reservar</button>
+                        </div>
+
+                        <div class="book-card">
+                            <h4>Sapiens: De Animales a Dioses</h4>
+                            <div class="author">Yuval Noah Harari</div>
+                            <p>Una fascinante exploración de la historia de la humanidad desde la edad de piedra.</p>
+                            <span class="status available">Disponible</span>
+                            <button class="btn" style="margin-top: 1rem;" onclick="reserveBook('004')">Reservar</button>
+                        </div>
+
+                        <div class="book-card">
+                            <h4>Don Quijote de la Mancha</h4>
+                            <div class="author">Miguel de Cervantes</div>
+                            <p>La obra cumbre de la literatura española y una de las novelas más influyentes de la historia.</p>
+                            <span class="status available">Disponible</span>
+                            <button class="btn" style="margin-top: 1rem;" onclick="reserveBook('005')">Reservar</button>
+                        </div>
+
+                        <div class="book-card">
+                            <h4>1984</h4>
+                            <div class="author">George Orwell</div>
+                            <p>Distopía clásica sobre el totalitarismo y la manipulación de la información.</p>
+                            <span class="status unavailable">Prestado</span>
+                            <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="addToWaitlist('006')">Lista de Espera</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Página de Servicios -->
+                <div id="servicios" class="page">
+                    <h1>Nuestros Servicios</h1>
+                    
+                    <div class="services-grid">
+                        <div class="service-card" onclick="toggleServiceDetail(this)">
+                            <h3>📚 Préstamo de Libros</h3>
+                            <p>Servicio gratuito de préstamo a domicilio. Hasta 3 libros por 15 días.</p>
+                            <div class="hidden" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                                <strong>Requisitos:</strong> Carnet de biblioteca vigente<br>
+                                <strong>Renovaciones:</strong> Hasta 2 veces si no hay reservas<br>
+                                <strong>Multas:</strong> S/. 1.00 por día de retraso
+                            </div>
+                        </div>
+
+                        <div class="service-card" onclick="toggleServiceDetail(this)">
+                            <h3>🖥️ Sala de Computadoras</h3>
+                            <p>20 computadoras con acceso a internet y software de oficina.</p>
+                            <div class="hidden" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                                <strong>Horario:</strong> L-V 9:00-19:00, S 10:00-16:00<br>
+                                <strong>Tiempo:</strong> 2 horas máximo por sesión<br>
+                                <strong>Reservas:</strong> Con 24 horas de anticipación
+                            </div>
+                        </div>
+
+                        <div class="service-card" onclick="toggleServiceDetail(this)">
+                            <h3>📓 Sala de Estudio</h3>
+                            <p>Espacios silenciosos para estudio individual y grupal.</p>
+                            <div class="hidden" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                                <strong>Capacidad:</strong> 50 personas<br>
+                                <strong>Horario:</strong> L-D 8:00-20:00<br>
+                                <strong>Reservas:</strong> No necesarias
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Página de Actividades -->
+                <div id="actividades" class="page">
+                    <h1>Actividades y Eventos</h1>
+                    
+                    <div class="event-card">
+                        <span class="event-date">15 Ago 2025</span>
+                        <h3>Club de Lectura - "Crónica de una muerte anunciada"</h3>
+                        <p>Únete a nuestra discusión mensual sobre esta obra maestra de Gabriel García Márquez. Moderado por la Dra. Ana Martínez, experta en literatura latinoamericana.</p>
+                        <ul style="margin: 1rem 0;">
+                            <li>📍 Sala de Conferencias - 2do Piso</li>
+                            <li>⏰ 17:00 - 19:00</li>
+                            <li>👥 Cupo máximo: 20 personas</li>
+                        </ul>
+                        <button class="btn" onclick="registerEvent('club-lectura')">Inscribirse</button>
+                    </div>
+
+                    <div class="event-card">
+                        <span class="event-date">20 Ago 2025</span>
+                        <h3>Taller de Escritura Creativa</h3>
+                        <p>Aprende técnicas narrativas y desarrolla tu creatividad en este taller práctico de 4 sesiones. Dirigido por el escritor Carlos Ruiz.</p>
+                        <ul style="margin: 1rem 0;">
+                            <li>📍 Sala de Talleres - 1er Piso</li>
+                            <li>⏰ 16:00 - 18:00</li>
+                            <li>💰 Costo: Gratuito</li>
+                        </ul>
+                        <button class="btn" onclick="registerEvent('taller-escritura')">Inscribirse</button>
+                    </div>
+
+                    <div class="event-card">
+                        <span class="event-date">25 Ago 2025</span>
+                        <h3>Hora del Cuento para Niños</h3>
+                        <p>Lectura dramatizada de cuentos infantiles. Para niños de 5-10 años. Incluye actividades interactivas y manualidades.</p>
+                        <ul style="margin: 1rem 0;">
+                            <li>📍 Área Infantil</li>
+                            <li>⏰ 11:00 - 12:30</li>
+                            <li>🎯 Edad: 5-10 años</li>
+                        </ul>
+                        <button class="btn" onclick="registerEvent('hora-cuento')">Inscribirse</button>
+                    </div>
+                </div>
+
+                <!-- Página de Mi Cuenta -->
+                <div id="cuenta" class="page">
+                    <h1>Mi Cuenta</h1>
+
+                    <div class="user-card">
+                        <h3>Información Personal</h3>
+                        <form class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" required>
+                            
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" required>
+                            
+                            <label for="dni">DNI</label>
+                            <input type="text" id="dni" required>
+                            
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono">
+                            
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" required>
+                            
+                            <button class="btn" type="submit">Actualizar Datos</button>
+                        </form>
+                    </div>
+
+                    <h2>Préstamos Actuales</h2>
+                    <div class="loan-item">
+                        <div>
+                            <strong>Cien Años de Soledad</strong>
+                            <p>Fecha de devolución: 20/08/2025</p>
+                        </div>
+                        <button class="btn" onclick="renewLoan('001')">Renovar</button>
+                    </div>
+
+                    <div class="loan-item overdue">
+                        <div>
+                            <strong>1984</strong>
+                            <p>Vencido: 10/08/2025</p>
+                        </div>
+                        <button class="btn btn-secondary">Multa Pendiente</button>
+                    </div>
+
+                    <h2>Historial de Préstamos</h2>
+                    <table style="width: 100%; margin-top: 1rem; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: #f8f9fa;">
+                                <th style="padding: 1rem; text-align: left;">Libro</th>
+                                <th style="padding: 1rem;">Fecha Préstamo</th>
+                                <th style="padding: 1rem;">Fecha Devolución</th>
+                                <th style="padding: 1rem;">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 1rem;">El Principito</td>
+                                <td style="padding: 1rem; text-align: center;">01/07/2025</td>
+                                <td style="padding: 1rem; text-align: center;">15/07/2025</td>
+                                <td style="padding: 1rem; text-align: center; color: green;">Devuelto</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;">Fahrenheit 451</td>
+                                <td style="padding: 1rem; text-align: center;">15/06/2025</td>
+                                <td style="padding: 1rem; text-align: center;">30/06/2025</td>
+                                <td style="padding: 1rem; text-align: center; color: green;">Devuelto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Página de Contacto -->
+                <div id="contacto" class="page">
+                    <h1>Contacto</h1>
+
+                    <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div class="form-container">
+                            <h2>Envíanos un Mensaje</h2>
+                            <form class="form-group" onsubmit="submitContact(event)">
+                                <label for="contactName">Nombre</label>
+                                <input type="text" id="contactName" required>
+
+                                <label for="contactEmail">Correo Electrónico</label>
+                                <input type="email" id="contactEmail" required>
+
+                                <label for="asunto">Asunto</label>
+                                <select id="asunto" required>
+                                    <option value="">Seleccione un asunto</option>
+                                    <option value="consulta">Consulta General</option>
+                                    <option value="prestamo">Préstamos</option>
+                                    <option value="actividades">Actividades</option>
+                                    <option value="sugerencia">Sugerencias</option>
+                                </select>
+
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" required></textarea>
+
+                                <button class="btn" type="submit">Enviar Mensaje</button>
+                            </form>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="alert alert-info">
+                                <h3>Información de Contacto</h3>
+                                <p>📍 Dirección: Av. Principal 123, Ciudad</p>
+                                <p>📞 Teléfono: (01) 234-5678</p>
+                                <p>📧 Email: biblioteca@municipal.gob.pe</p>
+                                <p>⏰ Horario de Atención:</p>
+                                <ul style="list-style: none; margin: 1rem 0;">
+                                    <li>Lunes a Viernes: 8:00 - 20:00</li>
+                                    <li>Sábados: 9:00 - 17:00</li>
+                                    <li>Domingos: 10:00 - 14:00</li>
+                                </ul>
+                            </div>
+
+                            <div class="map-container" style="margin-top: 2rem;">
+                                <h3>Ubicación</h3>
+                                <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; text-align: center;">
+                                    [Mapa de ubicación]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navegación entre páginas
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Funciones para el catálogo
+        function advancedSearch(event) {
+            event.preventDefault();
+            alert('Búsqueda iniciada con los filtros seleccionados');
+        }
+
+        function reserveBook(bookId) {
+            alert('Libro reservado exitosamente');
+        }
+
+        function addToWaitlist(bookId) {
+            alert('Has sido agregado a la lista de espera');
+        }
+
+        // Funciones para servicios
+        function toggleServiceDetail(card) {
+            const details = card.querySelector('.hidden');
+            if (details) {
+                details.style.display = details.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+
+        function showDayInfo(day) {
+            const messages = {
+                weekday: 'Todos los servicios disponibles, incluyendo préstamos y devoluciones',
+                saturday: 'Servicios limitados. No hay asesoría especializada',
+                sunday: 'Solo sala de lectura y recursos digitales',
+                holiday: 'Biblioteca cerrada. Accede a nuestros recursos digitales online'
+            };
+            alert(messages[day]);
+        }
+
+        // Funciones para actividades
+        function registerEvent(eventId) {
+            const events = {
+                'club-lectura': 'Club de Lectura',
+                'taller-escritura': 'Taller de Escritura',
+                'hora-cuento': 'Hora del Cuento'
+            };
+            alert(`Te has inscrito exitosamente en: ${events[eventId]}`);
+        }
+
+        // Funciones para mi cuenta
+        function renewLoan(loanId) {
+            alert('Préstamo renovado exitosamente por 15 días más');
+        }
+
+        // Funciones para contacto
+        function submitContact(event) {
+            event.preventDefault();
+            alert('Mensaje enviado exitosamente. Te responderemos pronto.');
+            event.target.reset();
+        }
+
+        // Al cargar la página, mostrar la página principal
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('inicio');
+        });
+    </script>
+</body>
+</html>
+                    </div>
+                </div>

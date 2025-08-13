@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Municipal Central - Conocimiento para Todos</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/catalogo.css">
+    <link rel="stylesheet" href="styles/servicios.css">
+    <link rel="stylesheet" href="styles/actividades.css">
+    <link rel="stylesheet" href="styles/cuenta.css">
+    <link rel="stylesheet" href="styles/contacto.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <span class="logo-icon">📚</span>
+                <a href="#" class="logo" onclick="showPage('inicio')">Biblioteca Municipal</a>
+            </div>
+            <div class="header-info">
+                <p>📞 (01) 234-5678</p>
+                <p>⏰ Lun-Vie: 8:00 - 20:00</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('inicio')">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('catalogo')">Catálogo</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('servicios')">Servicios</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('actividades')">Actividades</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('cuenta')">Mi Cuenta</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('contacto')">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-grid">
+            <aside class="sidebar">
+                <h3>Recursos Rápidos</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('catalogo')">Buscar Libros</a></li>
+                    <li><a href="#" onclick="showPage('cuenta')">Renovar Préstamo</a></li>
+                    <li><a href="#" onclick="showPage('actividades')">Eventos del Mes</a></li>
+                    <li><a href="#" onclick="showPage('servicios')">Horarios</a></li>
+                </ul>
+
+                <h3>Enlaces Útiles</h3>
+                <ul>
+                    <li><a href="#" target="_blank">Biblioteca Digital</a></li>
+                    <li><a href="#" target="_blank">Recursos Educativos</a></li>
+                    <li><a href="#" target="_blank">Guías de Investigación</a></li>
+                </ul>
+            </aside>
+
+            <main class="main-content">
+                <!-- Página de Inicio -->
+                <div id="inicio" class="page active">
+                    <h1>Bienvenidos a la Biblioteca Municipal</h1>
+                    <p>Tu espacio de conocimiento, cultura y comunidad. Explora nuestra extensa colección de libros, participa en actividades culturales y aprovecha nuestros servicios.</p>
+
+                    <h2>Destacados de la Semana</h2>
+                    <div class="featured-grid">
+                        <div class="featured-card">
+                            <h3>Nueva Adquisición</h3>
+                            <p>"El Infinito en un Junco" - Irene Vallejo</p>
+                            <a href="#" onclick="showPage('catalogo')">Ver más</a>
+                        </div>
+                        <div class="featured-card">
+                            <h3>Próximo Evento</h3>
+                            <p>Club de Lectura - 15 de Agosto</p>
+                            <a href="#" onclick="showPage('actividades')">Inscribirse</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Las demás páginas se cargarán dinámicamente -->
+            </main>
+
+            <aside class="sidebar">
+                <h3>Noticias</h3>
+                <div class="news-item">
+                    <h4>Nuevo Club de Lectura</h4>
+                    <p>Únete a nuestro club de lectura mensual.</p>
+                    <a href="#" onclick="showPage('actividades')">Más información</a>
+                </div>
+
+                <h3>Servicios Destacados</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('servicios')">Sala de Estudio</a></li>
+                    <li><a href="#" onclick="showPage('servicios')">Computadoras</a></li>
+                    <li><a href="#" onclick="showPage('servicios')">WiFi Gratuito</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Cargar las páginas HTML
+        function loadPage(url) {
+            return fetch(url)
+                .then(response => response.text())
+                .then(html => document.querySelector('.main-content').insertAdjacentHTML('beforeend', html))
+                .catch(error => console.error('Error cargando la página:', error));
+        }
+
+        // Cargar todas las páginas
+        Promise.all([
+            loadPage('pages/catalogo.html'),
+            loadPage('pages/servicios.html'),
+            loadPage('pages/actividades.html'),
+            loadPage('pages/cuenta.html'),
+            loadPage('pages/contacto.html')
+        ]).then(() => {
+            // Mostrar la página inicial
+            showPage('inicio');
+        });
+    </script>
+</body>
+</html>
